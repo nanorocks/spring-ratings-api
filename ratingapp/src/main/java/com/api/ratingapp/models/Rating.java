@@ -1,13 +1,12 @@
 package com.api.ratingapp.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import java.sql.Timestamp;
 
