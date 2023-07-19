@@ -1,0 +1,52 @@
+# Ignore target directory (generated build output)
+target/
+
+# Ignore IDE files and directories
+/.idea/
+/.vscode/
+
+# Ignore Maven-specific files
+mvnw
+mvnw.cmd
+.mvn/
+
+# Ignore Gradle-specific files
+gradlew
+gradlew.bat
+.gradle/
+
+# Ignore Spring Boot log files
+spring.log
+
+# Ignore application properties
+/application.properties
+
+# Ignore IDE-specific files (e.g., Eclipse .classpath, .project)
+*.classpath
+*.project
+
+# Ignore build output (JAR, WAR, etc.)
+*.jar
+*.war
+*.ear
+
+# Ignore IntelliJ IDEA project-specific files
+*.iml
+*.ipr
+*.iws
+
+# Ignore Eclipse project-specific files
+*.settings/
+*.launch
+
+# Ignore macOS-specific files
+.DS_Store
+
+# Ignore system-specific files
+Thumbs.db
+
+# Ignore compiled bytecode
+*.class
+
+# Ignore Maven wrapper jar
+.wrapper/
