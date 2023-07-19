@@ -3,6 +3,7 @@ package com.api.ratingapp.controllers;
 import com.api.ratingapp.dto.ProductRatingDTO;
 import com.api.ratingapp.models.Rating;
 import com.api.ratingapp.services.RatingService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,13 +40,13 @@ public class RatingController {
     }
 
     @PostMapping
-    public ResponseEntity<Rating> createRating(@RequestBody Rating newRating) {
+    public ResponseEntity<Rating> createRating(@Valid @RequestBody Rating newRating) {
         Rating createdRating = ratingService.createRating(newRating);
         return ResponseEntity.ok(createdRating);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Rating> updateRating(@PathVariable Long id, @RequestBody Rating updatedRating) {
+    public ResponseEntity<Rating> updateRating(@PathVariable Long id, @Valid @RequestBody Rating updatedRating) {
         Rating rating = ratingService.updateRating(id, updatedRating);
         if (rating != null) {
             return ResponseEntity.ok(rating);
@@ -88,7 +89,7 @@ public class RatingController {
     }
 
     @PostMapping("/unique")
-    public ResponseEntity<Rating> createUniqueRatingBySlugAndIp(@RequestBody Rating rating) {
+    public ResponseEntity<Rating> createUniqueRatingBySlugAndIp(@Valid @RequestBody Rating rating) {
         Rating createdRating = ratingService.createRatingBySlugAndIp(rating);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdRating);
     }
